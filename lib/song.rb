@@ -6,11 +6,11 @@ class Song
     @name = name
   end
 
-  def artist_name=(name)
+  def artist_name=(artist_name)
     if (self.artist.nil?)
       self.artist = Artist.find_or_create_by_name(name)
     else
-      self.artist_name = name
+      self.artist.name = artist_name
     end
   end
 
